@@ -16,7 +16,7 @@ def delete_film():
 
         # check if SongID exists 
         film_id = int(input("Enter the FilmID to delete a record: "))
-        dbCursor.execute("SELECT * FROM songs WHERE SongID = ?", (film_id,))
+        dbCursor.execute("SELECT * FROM tblFilms WHERE filmID = ?", (film_id,))
 
         # invoke the fetchone method and assign it to a variable called row 
         row = dbCursor.fetchone()
@@ -25,7 +25,7 @@ def delete_film():
             print(f"No record with {film_id} exists! ")
         
         else: # if there is a match with the song_id provide
-            dbCursor.execute("DELETE FROM songs WHERE FilmgID = ?", (film_id,))
+            dbCursor.execute("DELETE FROM tblFilms WHERE FilmID = ?", (film_id,))
             dbCon.commit()
 
             print(f"The record with the FilmID {film_id}  deleted!! ")
