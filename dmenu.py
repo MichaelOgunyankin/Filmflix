@@ -19,13 +19,13 @@ def read_file(file_path):# file_path is the parameter
 # # test read_file function 
 # print(read_file("PtDBOps2024V2/dbMenu.txt"))
         
-def songs_menu():
+def films_menu():
     option = 0 # create an integer variable call option
     # create a list data structure hold string items/values and assign it to optionsList
     optionsList = ["1","2","3","4","5","6"]
 
     # call/invoke invoke the read_file funcion and assign it to a variable 
-    menu_choices = read_file("PtDBOps2024V2/dbMenu.txt")
+    menu_choices = read_file("Week 10/Day 4/Python Project/Filmflix/dbMenu.txt")
 
     # display the contents held in the menu_choices repeatedly 
     while option not in optionsList:
@@ -45,12 +45,12 @@ main_program = True # can be toggle to False if required(to exit the loop below)
 while main_program: #same as while True
     # call/invoke invoke the songs_menu() funcion and assign it to a variable
 
-    menu_options = songs_menu() # songs_menu() returns = "1"/"2"/"4.5..6.."
+    menu_options = films_menu() # songs_menu() returns = "1"/"2"/"4.5..6.."
 
     # check if "1"/"2"/"4.5..6.." =="1"
     if menu_options == "1":
         # call the file name readrecords and the function read_all_songs() 
-        readrecords.read_all_songs()
+        readrecords.read_all_films()
 
         # check if "1"/"2"/"4.5..6.." =="2"
     elif menu_options == "2":
@@ -59,7 +59,7 @@ while main_program: #same as while True
     elif menu_options == "3":
         updaterecord.update_record()
     elif menu_options == "4":
-        deleterecord.delete_song()
+        deleterecord.delete_film()
     elif menu_options == "5":
         report.report()
     else: #re-assign the value to False to exit the loop
